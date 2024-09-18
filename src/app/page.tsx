@@ -20,16 +20,16 @@ export default function Home() {
   );
 
   return (
-    <main className="flex-grow container mx-auto px-4 py-8">
-      <div className="mb-8 space-y-4">
-        <div className="flex flex-wrap gap-2">
+    <main className="flex-grow container mx-auto px-4">
+      <div className='mb-8'>
+        <div className="flex flex-wrap gap-2 py-2">
           {categories.map((category) => (
             <Badge
               key={category.name}
               variant={
                 selectedCategory === category.name ? "default" : "outline"
               }
-              className="cursor-pointer text-sm"
+              className="cursor-pointer text-lg px-4"
               onClick={() => {
                 setSelectedCategory(category.name);
                 setSelectedSubcategory(category.subcategories[0]);
@@ -39,8 +39,8 @@ export default function Home() {
             </Badge>
           ))}
         </div>
-        <Separator />
-        <div className="flex flex-wrap gap-2">
+        <Separator/>
+        <div className="flex flex-wrap gap-2 py-2">
           {categories
             .find((c) => c.name === selectedCategory)
             ?.subcategories.map((subcategory) => (
@@ -49,7 +49,7 @@ export default function Home() {
                 variant={
                   selectedSubcategory === subcategory ? "secondary" : "outline"
                 }
-                className="cursor-pointer text-sm"
+                className="cursor-pointer text-lg px-4"
                 onClick={() => setSelectedSubcategory(subcategory)}
               >
                 {subcategory}
