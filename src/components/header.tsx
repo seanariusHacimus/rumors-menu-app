@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Mail } from "lucide-react";
-import Logo from './../../public/img/logo.svg';
 
 const Header = () => {
   return (

@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Mail, Phone } from "lucide-react";
-
 const Header = () => {
   return (
     <footer className="border-t mt-12 fixed bottom-0 w-full bg-white">
