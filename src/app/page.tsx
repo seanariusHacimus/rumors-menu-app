@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 mb-24">
         {filteredItems.map((item) => (
           <Card key={item.name} className="overflow-hidden">
             <CardContent className="p-4 flex items-center space-x-4">
