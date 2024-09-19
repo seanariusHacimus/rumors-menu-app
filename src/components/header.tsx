@@ -12,7 +12,7 @@ const Header = () => {
             alt="Логотип Rumors"
             width={260}
             height={260}
-            className="block"
+            className="block w-44 sm:w-64"
           />
           {/* <span className="text-xl font-bold dark:text-white">Gourmet Haven</span> */}
         </div>

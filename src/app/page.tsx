@@ -22,21 +22,25 @@ export default function Home() {
   return (
     <main className="flex-grow container mx-auto px-4">
       <div className='mb-8'>
-        <div className="flex flex-wrap gap-2 py-2">
+        <div className="flex flex-wrap gap-2 py-2 mt-4">
           {categories.map((category) => (
             <Badge
-              key={category.name}
-              variant={
-                selectedCategory === category.name ? "default" : "outline"
-              }
-              className="cursor-pointer text-lg px-4"
-              onClick={() => {
-                setSelectedCategory(category.name);
-                setSelectedSubcategory(category.subcategories[0]);
-              }}
-            >
-              {category.name}
-            </Badge>
+            key={category.name}
+            variant={
+              selectedCategory === category.name ? "default" : "outline"
+            }
+            className={`cursor-pointer text-md px-4 ${
+              selectedCategory === category.name
+                ? "bg-[#004746] text-white hover:bg-[#004746] active:bg-[#004746] "
+                : "bg-white text-gray-700 hover:bg-gray-300 active:bg-gray-400 border-[#e5e5e5]-100"
+            }`}
+            onClick={() => {
+              setSelectedCategory(category.name);
+              setSelectedSubcategory(category.subcategories[0]);
+            }}
+          >
+            {category.name}
+          </Badge>
           ))}
         </div>
         <Separator/>
@@ -49,7 +53,7 @@ export default function Home() {
                 variant={
                   selectedSubcategory === subcategory ? "secondary" : "outline"
                 }
-                className="cursor-pointer text-lg px-4"
+                className="cursor-pointer text-md px-4"
                 onClick={() => setSelectedSubcategory(subcategory)}
               >
                 {subcategory}
@@ -58,13 +62,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
         {filteredItems.map((item) => (
           <Card key={item.name} className="overflow-hidden">
             <CardContent className="p-4 flex items-center space-x-4">
               <div className="relative w-24 h-24 flex-shrink-0">
                 <Image
-                  src="/placeholder.svg"
+                  src={item.img_url}
                   alt={item.name}
                   layout="fill"
                   objectFit="cover"
